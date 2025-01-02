@@ -100,11 +100,11 @@ async function getResponse() {
 
     try {
         const initialResponse = await fetch(
-            'https://api.edenai.run/v2/workflow/5ebe04de-f5e3-4a77-ad68-3476c87b5d75/execution/',
+            'https://api.edenai.run/v2/workflow/7d32cfbd-429d-44b7-8657-ea44133baad9/execution/',
             {
                 method: 'POST',
                 headers: {
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJmMTViNTAtMTI5MC00MjRlLTg3MTEtY2VkMDRkZDdjMjNmIiwidHlwZSI6ImFwaV90b2tlbiJ9.oTSUrkBz3ruARCuXfAjiLPJwtFII3udNZWO33Tq85NM',
+                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDY4MmE2OWMtYTI4Yy00ZDI2LTg1NmMtNGQwMzdjYTIzYTU1IiwidHlwZSI6ImFwaV90b2tlbiJ9.c-Kgfz2v6L7oymRZQUDuf6OdR_acplIkpl3NS1uCmWE',
                 },
                 body: formData,
             }
@@ -118,13 +118,13 @@ async function getResponse() {
         const executionID = executionResult.id;
 
         const pollExecutionResult = async (executionID) => {
-            const executionUrl = `https://api.edenai.run/v2/workflow/5ebe04de-f5e3-4a77-ad68-3476c87b5d75/execution/${executionID}/`;
+            const executionUrl = `https://api.edenai.run/v2/workflow/7d32cfbd-429d-44b7-8657-ea44133baad9/execution/${executionID}/`;
 
             while (true) {
                 const response = await fetch(executionUrl, {
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJmMTViNTAtMTI5MC00MjRlLTg3MTEtY2VkMDRkZDdjMjNmIiwidHlwZSI6ImFwaV90b2tlbiJ9.oTSUrkBz3ruARCuXfAjiLPJwtFII3udNZWO33Tq85NM',
+                        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDY4MmE2OWMtYTI4Yy00ZDI2LTg1NmMtNGQwMzdjYTIzYTU1IiwidHlwZSI6ImFwaV90b2tlbiJ9.c-Kgfz2v6L7oymRZQUDuf6OdR_acplIkpl3NS1uCmWE',
                     },
                 });
 
